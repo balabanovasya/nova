@@ -425,6 +425,8 @@
         el('button', { class: 'btn small', onclick: function () { LS('draft', null); bn.remove(); } }, ['Удалить'])])]);
       $('#main').before(bn);
     }
+    var miss = (CFG.settings || []).filter(function (s) { return s.required && !(ST.settings[s.key] || s.def); });
+    if (miss.length) $('#main').before(el('div', { class: 'banner' }, [el('span', null, ['Заполните реквизиты: ' + miss.map(function (s) { return s.label; }).join(', ') + '. Без них документы на сайте неполные.']), el('button', { class: 'btn small', onclick: function () { show('settings'); } }, ['Открыть'])]));
     show('photos');
   }
   var f = $('#probe');

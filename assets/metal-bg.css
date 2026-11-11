@@ -1,0 +1,14 @@
+/* Фон из 3D-деталей: детали «вырастают» из стены при прокрутке и медленно парят */
+#siteWrap{position:relative;isolation:isolate}
+#siteWrap section,#siteWrap footer{position:relative;z-index:1}
+#metalBg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.mbg{position:absolute;opacity:0;width:var(--w);
+  transform:translate3d(var(--ex),26px,0) scale(.84) rotate(var(--r0));filter:blur(10px) brightness(.55);
+  transition:opacity 1.8s cubic-bezier(.22,1,.36,1),transform 2.2s cubic-bezier(.22,1,.36,1),filter 1.8s ease}
+.mbg.in{opacity:var(--o);transform:translate3d(0,0,0) scale(1) rotate(var(--r));filter:none}
+.mbg::before{content:"";position:absolute;inset:-14%;border-radius:50%;z-index:-1;
+  background:radial-gradient(closest-side,rgba(0,0,0,.7),rgba(0,0,0,0) 72%);filter:blur(16px)}
+.mbg img{display:block;width:100%;height:auto;-webkit-mask-image:var(--mask);mask-image:var(--mask);
+  animation:mbgFloat var(--fd) ease-in-out infinite alternate;animation-delay:var(--dl)}
+@keyframes mbgFloat{from{transform:translateY(-9px) rotate(-1.3deg)}to{transform:translateY(11px) rotate(1.5deg)}}
+@media (prefers-reduced-motion:reduce){.mbg img{animation:none}.mbg{transition:opacity .01s}}
