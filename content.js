@@ -5,7 +5,8 @@ window.SITE_OVERRIDES = {
   "email": "sergei.matv2018@yandex.ru",
   "yandexForm": "https://forms.yandex.ru/u/6af4a5776f1ca449888868d1",
   "inn": "6311103881",
-  "ogrn": "1086311000148"
+  "ogrn": "1086311000148",
+  "hosting": "Yandex Object Storage (Яндекс.Облако, РФ)"
  },
  "photos": {},
  "lists": {},
