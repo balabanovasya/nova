@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin.html
+Allow: /
+
+Host: https://nova-metall.ru
+Sitemap: https://nova-metall.ru/sitemap.xml
